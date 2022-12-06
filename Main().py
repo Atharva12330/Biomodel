@@ -1,9 +1,56 @@
-import re
+iall_diseases = {
+    "Coronary Artery Disease": {'chest pain', 'body pain', 'falling sick', 'feeling faint', 'shortness of breath'},
+    "Vulvar Heart Disease": {'swollen ankles', 'fanting', 'shortness of breath'},
+    "illness 3": {'racing heartbeat', 'slow heartbeat', 'chest pain', 'anxiety', 'sweating'},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    "illness 4": {"symptom a", "symptom b", "symptom g"},
+    
+    
+}
 
-input1 = input("Enter Your Symptoms: ".lower())
-x = re.split("\s", input1)  #used to seprate the words in the string and create a list out of it
+experienced_symptoms = {"symptom b", "symptom f"}
 
-# Symptoms
+
+
+def get_disease_scores(
+    symptoms: set[str], diseases: dict[str, set[str]]) -> dict[str, float]:
+    scores = {}
+
+    # Iterate over all diseases with their symptoms
+    for disease, disease_symptoms in diseases.items():
+        # Get the symptoms common to the disease and experienced ones
+        common_symptoms = symptoms.intersection(disease_symptoms)
+        # Calculate and keep track of score
+        scores[disease] = len(common_symptoms) / len(disease_symptoms)
+
+    return scores
+
+
+
+print(get_disease_scores(experienced_symptoms, all_diseases))
+
+-------------------------------
+
 cadsym = ['chest pain' , 'body pain' , 'falling sick' , 'feeling faint' , 'shortness of breath']
 vhdsym = ['swollen ankles' , 'fanting' , 'shortness of breath']
 hasym = ['racing heartbeat', 'slow heartbeat', 'chest pain' , 'anxiety', 'sweating']
