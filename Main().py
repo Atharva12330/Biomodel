@@ -1,4 +1,7 @@
-x = input("Enter Your Symptoms: ".lower())
+import re
+
+input1 = input("Enter Your Symptoms: ".lower())
+x = re.split("\s", input1)  #used to seprate the words in the string and create a list out of it
 
 # Symptoms
 cadsym = ['chest pain' , 'body pain' , 'falling sick' , 'feeling faint' , 'shortness of breath']
@@ -7,9 +10,9 @@ hasym = ['racing heartbeat', 'slow heartbeat', 'chest pain' , 'anxiety', 'sweati
 mhasym = ['cold sweat', 'heartburn', 'sudden dizziness', 'discomfort in joints']
 jsym = ['itching', 'abdominal pain', 'weight loss', 'yellow eyes' , 'yellow nails', 'vomiting']
 cpsym = ['rashes on skin' , 'fever' , 'sore throat' , 'brown spots' , 'itching']
-msym = ['fever',' runny nose','sneezing','pink eye',' skin rash','diarrhoea']
-dsym = ['Eye pain',' fever',' muscle pain',' nausea',' joint pain',' rash on thigh']
-masym = ['pain in muscle','pain in abdomin',' Night sweat',' shivering',' fast heart rate',' mental confusion']
+msym = ['fever', 'runny nose' , 'sneezing' , 'pink eye' , 'skin rash', 'diarrhoea']
+dsym = ['Eye pain' , 'fever' , 'muscle pain' , 'nausea' , 'joint pain', 'rash on thigh']
+masym = ['pain in muscle' , 'pain in abdomin' , 'Night sweat' , 'shivering', 'fast heart rate' , 'mental confusion']
 tcsym = ['chest pain','Night sweats','shortness of breath','blood cough']
 disym = ['increase thirst','frequent urination','hunger','blurred vision','slow healing']
 pnsym = ['fever','chills','sharp pain in chest','clammy skin']
